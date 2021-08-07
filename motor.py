@@ -1,3 +1,4 @@
+# This is the main file
 import RPi.GPIO as GPIO
 from time import sleep
 
