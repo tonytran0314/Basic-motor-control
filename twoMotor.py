@@ -17,10 +17,10 @@ GPIO.setup(Enb,GPIO.OUT)
 GPIO.setup(In3,GPIO.OUT)
 GPIO.setup(In4,GPIO.OUT)
 
-pwmA = GPIO.PWM(Ena, 100)
+pwmA = GPIO.PWM(Ena, 1000)
 pwmA.start(0)
 
-pwmB = GPIO.PWM(Enb, 100)
+pwmB = GPIO.PWM(Enb, 1000)
 pwmB.start(0)
 
 sleepTime = 3
