@@ -25,8 +25,8 @@ pwmB.start(0)
 
 sleepTime = 3
 
-GPIO.output(In1, GPIO.HIGH)
-GPIO.output(In2, GPIO.LOW)
+GPIO.output(In1, GPIO.LOW)
+GPIO.output(In2, GPIO.HIGH)
 pwmA.ChangeDutyCycle(100)
 
 GPIO.output(In3, GPIO.HIGH)
@@ -41,8 +41,8 @@ pwmB.ChangeDutyCycle(0)
 sleep(sleepTime)
 
 
-GPIO.output(In1, GPIO.LOW)
-GPIO.output(In2, GPIO.HIGH)
+GPIO.output(In1, GPIO.HIGH)
+GPIO.output(In2, GPIO.LOW)
 pwmA.ChangeDutyCycle(100)
 
 GPIO.output(In3, GPIO.LOW)
