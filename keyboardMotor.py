@@ -62,5 +62,3 @@ while True:
         exit()
     else:
         print("Only w, s or x")
-
-#exit()
