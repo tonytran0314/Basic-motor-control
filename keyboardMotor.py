@@ -2,6 +2,7 @@
 # W - forward
 # S - backward
 
+
 import RPi.GPIO as GPIO
 from time import sleep
 
@@ -29,31 +30,39 @@ pwmB.start(0)
 
 sleepTime = 3
 
-GPIO.output(In1, GPIO.LOW)
-GPIO.output(In2, GPIO.HIGH)
-pwmA.ChangeDutyCycle(100)
+moveMent = None
+while True:
+    moveMent = input("Enter w, s or x: ")
 
-GPIO.output(In3, GPIO.HIGH)
-GPIO.output(In4, GPIO.LOW)
-pwmB.ChangeDutyCycle(100)
+    if moveMent == "s" or moveMent == "S":
+        print("Backward")
+        GPIO.output(In1, GPIO.LOW)
+        GPIO.output(In2, GPIO.HIGH)
+        pwmA.ChangeDutyCycle(100)
 
-sleep(sleepTime)
+        GPIO.output(In3, GPIO.HIGH)
+        GPIO.output(In4, GPIO.LOW)
+        pwmB.ChangeDutyCycle(100)
 
+        sleep(sleepTime)
+    elif moveMent == "w" or moveMent == "W":
+        print("Forward")
+        GPIO.output(In1, GPIO.HIGH)
+        GPIO.output(In2, GPIO.LOW)
+        pwmA.ChangeDutyCycle(100)
 
-pwmA.ChangeDutyCycle(0)
-pwmB.ChangeDutyCycle(0)
-sleep(sleepTime)
+        GPIO.output(In3, GPIO.LOW)
+        GPIO.output(In4, GPIO.HIGH)
+        pwmB.ChangeDutyCycle(100)
 
-
-GPIO.output(In1, GPIO.HIGH)
-GPIO.output(In2, GPIO.LOW)
-pwmA.ChangeDutyCycle(100)
-
-GPIO.output(In3, GPIO.LOW)
-GPIO.output(In4, GPIO.HIGH)
-pwmB.ChangeDutyCycle(100)
-
-sleep(sleepTime)
-
+        sleep(sleepTime)
+    elif moveMent == "x" or moveMent == "X":
+        print("Motors have been stopped")
+        pwmA.ChangeDutyCycle(0)
+        pwmB.ChangeDutyCycle(0)
+        sleep(sleepTime)
+        exit()
+    else:
+        print("Only w, s or x")
 
 exit()
