@@ -33,7 +33,7 @@ sleepTime = 3
 
 moveMent = None
 while True:
-    moveMent = input("Enter w, s or x: ")
+    moveMent = raw_input("Enter w, s or x: ")
 
     if moveMent == "s" or moveMent == "S":
         print("Backward")
