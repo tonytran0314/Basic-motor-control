@@ -40,23 +40,20 @@ while True:
         GPIO.output(In1, GPIO.LOW)
         GPIO.output(In2, GPIO.HIGH)
         pwmA.ChangeDutyCycle(100)
-
         GPIO.output(In3, GPIO.HIGH)
         GPIO.output(In4, GPIO.LOW)
         pwmB.ChangeDutyCycle(100)
-
         sleep(sleepTime)
     elif moveMent == "w" or moveMent == "W":
         print("Forward")
         GPIO.output(In1, GPIO.HIGH)
         GPIO.output(In2, GPIO.LOW)
         pwmA.ChangeDutyCycle(100)
-
         GPIO.output(In3, GPIO.LOW)
         GPIO.output(In4, GPIO.HIGH)
         pwmB.ChangeDutyCycle(100)
-
         sleep(sleepTime)
+
     elif moveMent == "x" or moveMent == "X":
         print("Motors have been stopped")
         pwmA.ChangeDutyCycle(0)
@@ -66,4 +63,4 @@ while True:
     else:
         print("Only w, s or x")
 
-exit()
+#exit()
