@@ -1,7 +1,8 @@
-# Motor control by keyboard
-# W - forward
-# S - backward
-
+'''
+Motor control by keyboard
+W - forward
+S - backward
+'''
 
 import RPi.GPIO as GPIO
 from time import sleep
