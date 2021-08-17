@@ -33,4 +33,5 @@ except KeyboardInterrupt:
     print("The program has been stopped")
 
 finally:
+    pwm.ChangeDutyCycle(0)
     GPIO.cleanup()
