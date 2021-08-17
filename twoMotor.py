@@ -24,32 +24,35 @@ pwmB = GPIO.PWM(Enb, 1000)
 pwmB.start(0)
 
 sleepTime = 3
+try:
+  while True:
+    
+    GPIO.output(In1, GPIO.LOW)
+    GPIO.output(In2, GPIO.HIGH)
+    pwmA.ChangeDutyCycle(100)
 
-GPIO.output(In1, GPIO.LOW)
-GPIO.output(In2, GPIO.HIGH)
-pwmA.ChangeDutyCycle(100)
+    GPIO.output(In3, GPIO.HIGH)
+    GPIO.output(In4, GPIO.LOW)
+    pwmB.ChangeDutyCycle(100)
 
-GPIO.output(In3, GPIO.HIGH)
-GPIO.output(In4, GPIO.LOW)
-pwmB.ChangeDutyCycle(100)
-
-sleep(sleepTime)
-
-
-pwmA.ChangeDutyCycle(0)
-pwmB.ChangeDutyCycle(0)
-sleep(sleepTime)
+    sleep(sleepTime)
 
 
-GPIO.output(In1, GPIO.HIGH)
-GPIO.output(In2, GPIO.LOW)
-pwmA.ChangeDutyCycle(100)
-
-GPIO.output(In3, GPIO.LOW)
-GPIO.output(In4, GPIO.HIGH)
-pwmB.ChangeDutyCycle(100)
-
-sleep(sleepTime)
+    pwmA.ChangeDutyCycle(0)
+    pwmB.ChangeDutyCycle(0)
+    sleep(sleepTime)
 
 
-exit()
+    GPIO.output(In1, GPIO.HIGH)
+    GPIO.output(In2, GPIO.LOW)
+    pwmA.ChangeDutyCycle(100)
+
+    GPIO.output(In3, GPIO.LOW)
+    GPIO.output(In4, GPIO.HIGH)
+    pwmB.ChangeDutyCycle(100)
+
+    sleep(sleepTime)
+except KeyboardInterrupt:
+    print("\nThe program has been stopped")
+finally:
+    GPIO.cleanup()
