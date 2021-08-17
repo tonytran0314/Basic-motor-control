@@ -22,7 +22,7 @@ try:
     while True:
         GPIO.output(In1, GPIO.HIGH)
         GPIO.output(In2, GPIO.LOW)
-        pwm.ChangeDutyCycle(100)
+        pwm.ChangeDutyCycle(25)
         sleep(workingTime)
 
         pwm.ChangeDutyCycle(0)
@@ -30,7 +30,7 @@ try:
 
         GPIO.output(In1, GPIO.LOW)
         GPIO.output(In2, GPIO.HIGH)
-        pwm.ChangeDutyCycle(100)
+        pwm.ChangeDutyCycle(25)
         sleep(workingTime)
         
         pwm.ChangeDutyCycle(0)
