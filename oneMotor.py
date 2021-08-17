@@ -12,7 +12,7 @@ GPIO.setup(In1,GPIO.OUT)
 GPIO.setup(In2,GPIO.OUT)
 pwm = GPIO.PWM(Ena, 100)
 
-workingTime = 0.5
+workingTime = 0.1
 breakTime = 3
 
 pwm.start(0)
