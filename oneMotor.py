@@ -28,6 +28,9 @@ try:
         GPIO.output(In2, GPIO.HIGH)
         pwm.ChangeDutyCycle(100)
         sleep(sleepTime)
+        
+        pwm.ChangeDutyCycle(0)
+        sleep(sleepTime)
 
 except KeyboardInterrupt:
     print("The program has been stopped")
