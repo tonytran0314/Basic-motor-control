@@ -33,7 +33,7 @@ try:
         sleep(sleepTime)
 
 except KeyboardInterrupt:
-    print("The program has been stopped")
+    print("\nThe program has been stopped")
 
 finally:
     pwm.ChangeDutyCycle(0)
