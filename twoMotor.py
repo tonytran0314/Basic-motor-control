@@ -23,7 +23,7 @@ pwmA.start(0)
 pwmB = GPIO.PWM(Enb, 1000)
 pwmB.start(0)
 
-sleepTime = 2
+sleepTime = 3
 try:
   while True:
     
