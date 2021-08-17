@@ -4,7 +4,9 @@ from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
+
 Ena, In1, In2 = 17,27,22
+
 GPIO.setup(Ena,GPIO.OUT)
 GPIO.setup(In1,GPIO.OUT)
 GPIO.setup(In2,GPIO.OUT)
@@ -13,8 +15,6 @@ pwm = GPIO.PWM(Ena, 100)
 sleepTime = 3
 
 pwm.start(0)
-pwm.ChangeDutyCycle(0)
-sleep(0.1)
 
 
 try:
@@ -39,5 +39,4 @@ except KeyboardInterrupt:
     print("\nThe program has been stopped")
 
 finally:
-    pwm.stop()
     GPIO.cleanup()
