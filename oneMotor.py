@@ -10,9 +10,12 @@ GPIO.setup(In1,GPIO.OUT)
 GPIO.setup(In2,GPIO.OUT)
 pwm = GPIO.PWM(Ena, 100)
 
-pwm.start(0)
-
 sleepTime = 3
+
+pwm.start(0)
+pwm.ChangeDutyCycle(0)
+sleep(0.1)
+
 
 try:
     while True:
@@ -28,10 +31,13 @@ try:
         GPIO.output(In2, GPIO.HIGH)
         pwm.ChangeDutyCycle(100)
         sleep(sleepTime)
+        
+        pwm.ChangeDutyCycle(0)
+        sleep(sleepTime)
 
 except KeyboardInterrupt:
-    print("The program has been stopped")
+    print("\nThe program has been stopped")
 
 finally:
-    pwm.ChangeDutyCycle(0)
+    pwm.stop()
     GPIO.cleanup()
