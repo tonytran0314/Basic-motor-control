@@ -12,6 +12,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # declare pins
+# Note: pins 2,3,4 make motor auto rotate even when the program not executing
 Ena = 2 
 Enb = 17
 In1, In2 = 3,4
