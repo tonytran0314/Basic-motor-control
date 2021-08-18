@@ -4,6 +4,7 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
+# Pins 2,3,4 make motor working without any program
 Ena = 2 
 Enb = 17
 In1, In2 = 3,4
