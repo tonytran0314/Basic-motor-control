@@ -33,7 +33,7 @@ def greeting():
 def on():
     GPIO.output(In1, GPIO.HIGH)
     GPIO.output(In2, GPIO.LOW)
-    pwm.ChangeDutyCycle(40)
+    pwm.ChangeDutyCycle(100)
     return render_template("on.html") # must have templates folder to contain html files
 
 @app.route("/off")
